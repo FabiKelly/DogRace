@@ -1,0 +1,71 @@
+html, body {
+    min-height: 100%;
+}
+body {
+    background-image: url("https://dietadecao.com.br/wp-content/uploads/2019/09/porque-cachorro-come-grama.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: left;
+	background-image: linear-gradient(rgb(28, 178, 228), lightblue, green);
+}
+header p {
+    font-size: 8px;
+    color: black;
+}
+nav {
+	background-color: #ccc;
+	text-align: center;
+}
+nav p {
+	display: inline-block;
+	padding: 5px;
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18px;
+	margin-right: 10px;
+}
+nav p:hover {
+	color: #fff;
+	background-color: #333;
+}
+main {
+    margin-left: 65%;
+    margin-top: 10%;
+}
+a {
+    text-decoration: none;
+}
+.botoes {
+    background-color: black;
+    opacity: 80%;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 3%;
+    color: lightyellow;
+    display: grid;
+    font-size: 17px;
+    width: 60%;
+    cursor: pointer;
+}
+.botoes:hover {
+    color: goldenrod;
+    transform: scale(1.1);
+}
+#dog {
+	border: none;
+	position: relative;
+	left: 0;
+	width: 70px;
+}
