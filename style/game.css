@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: rgb(20, 20, 20);
+}
+.container {
+    height: 85%;
+    width: 85%;
+    border: 1px solid gray;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: url(/imgs/fundomexe.gif);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+}
+.container #dog {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    bottom: 168px;
+    left: 20px;
+}
+.dogActive {
+    animation: animateDog 0.5s linear infinite;
+}
+.container #dog img {
+    height: 100px;
+    width: 100px;
+}
+@keyframes animateDog {
+    0%, 100% {
+        bottom: 168px;
+    }
+    45%, 55% {
+        bottom: 300px;
+    }
+}
+.container #obstaculo {
+    height: 60px;
+    width: 80px;
+    position: absolute;
+    bottom: 140px;
+    right: -80px;
+    animation: animateObst 1.5s linear infinite;
+}
+.container #obstaculo img {
+    height: 60px;
+    width: 80px;
+}
+@keyframes animateObst {
+    0% {
+        right: -80px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+#score {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+#gameOver {
+    /* display: none; */
+    font-size: 70px;
+    position: absolute;
+    left: calc(50% - 181px);
+    top: calc(50% - 40px);
+    height: 80px;
+    width: 362px;
+    color: #525252;
+}
