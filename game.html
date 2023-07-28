@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
         <title>Dog Race</title>
+        <link rel="icon" href="imgs/icone.png">
+        <link rel="stylesheet" href="style/game.css">
     </head>
     <body>
+        <div class="container">
+            <div id="dog">
+                <img src="imgs/cachorrinho.gif" alt="dog">
+            </div>
+            <div id="obstaculo">
+                <img src="imgs/pipe.png" alt="obstaculo">
+            </div>
+            <div id="score">Score <b>00</b></div>
+            <div id="gameOver">Game Over</div>
+        </div>
+
+        <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
         <script src="js/game.js"></script>
     </body>
 </html>
