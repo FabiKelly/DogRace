@@ -8,17 +8,17 @@ body {
     display: grid;
     place-items: center;
     height: 100vh;
-    /* background-color: rgb(20, 20, 20); */
-    background-image: url(/imgs/fundomexe.gif);
-    background-size: 85%;
+    background-color: rgb(20, 20, 20);
 }
 .container {
     height: 85%;
-    width: 85%;
+    width: 90%;
     border: 1px solid gray;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    background: url(/imgs/fundomexe.gif);
+    background-size: 85%;
 }
 .container #dog {
     height: 70px;
