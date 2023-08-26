@@ -18,15 +18,13 @@ body {
     position: relative;
     overflow: hidden;
     background-image: url(/imgs/fundomexe.gif);
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: cover;
+    background-size: 90%;
 }
 .container #dog {
     height: 70px;
     width: 70px;
     position: absolute;
-    bottom: 168px;
+    bottom: 105px;
     left: 20px;
 }
 .dogActive {
@@ -38,23 +36,25 @@ body {
 }
 @keyframes animateDog {
     0%, 100% {
-        bottom: 168px;
+        bottom: 100px;
     }
     45%, 55% {
-        bottom: 300px;
+        bottom: 232px;
     }
 }
 .container #obstaculo {
     height: 60px;
     width: 80px;
     position: absolute;
-    bottom: 140px;
+    bottom: 75px;
     right: -80px;
-    animation: animateObst 1.5s linear infinite;
 }
 .container #obstaculo img {
     height: 60px;
     width: 80px;
+}
+.obstaculoActive {
+    animation: animateObst 1.5s linear infinite;
 }
 @keyframes animateObst {
     0% {
@@ -69,7 +69,7 @@ body {
     width: auto;
     position: absolute;
     top: 20px;
-    right: 5px;
+    right: 0;
 }
 #gameOver {
     /* display: none; */
