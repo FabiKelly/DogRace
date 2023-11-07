@@ -24,7 +24,7 @@ body {
     height: 70px;
     width: 70px;
     position: absolute;
-    bottom: 55px;
+    bottom: 50px;
     left: 20px;
 }
 .dogActive {
@@ -46,7 +46,7 @@ body {
     height: 60px;
     width: 80px;
     position: absolute;
-    bottom: 75px;
+    bottom: 20px;
     right: -80px;
 }
 .container #obstaculo img {
