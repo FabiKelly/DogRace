@@ -17,7 +17,7 @@ body {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: url(/imgs/fundomexe.gif);
+    background: url(../imgs/fundomexe.gif);
     background-size: 85%;
 }
 .container #dog {
@@ -80,4 +80,5 @@ body {
     height: 80px;
     width: 362px;
     color: #525252;
+    display: none;
 }
