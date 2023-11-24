@@ -1,58 +1,78 @@
-let container = document.querySelector(".container");
-let dog = document.querySelector("#dog");
-let obstaculo = document.querySelector("#obstaculo");
-let score = document.querySelector("#score");
-let gameOver = document.querySelector("#gameOver");
+const dog = document.getElementById('dog');
+const obstacle = document.getElementById('obstacle');
+let jumping = false;
 
-let intervalo = null;
-let playerScore = 0;
+document.addEventListener('keydown', (event) => {
+    if (event.keyCode === 32 && !jumping) {
+        jump();
+    }
+});
 
-let contagemScore = ()=> {
-    playerScore++;
-    score.innerHTML = `Score <b>${playerScore}</b>`;
+function jump() {
+    jumping = true;
+    let jumpHeight = 0;
+    let jumpCount = 0;
+
+    let jumpInterval = setInterval(() => {
+        if (jumpCount < 15) {
+            jumpHeight += 5;
+            jumpCount++;
+        } else if (jumpCount < 30) {
+            jumpHeight -= 5;
+            jumpCount++;
+        } else {
+            clearInterval(jumpInterval);
+            jumping = false;
+        }
+        dog.style.bottom = (20 + jumpHeight) + "px";
+    }, 20);
 }
 
-//start game
-window.addEventListener("keydown" , (start) => {
-//    console.log(start);
-    if(start.code == "Space") {
-        gameOver.style.display = "none";
-        obstaculo.classList.add("obstaculoActive");
+let score = 0;
+let highscore = localStorage.getItem('highscore') || 0;
+document.getElementById('highscore').textContent = highscore;
 
-        let playerScore = 0;
-        intervalo = setInterval(contagemScore, 200);
+function updateScore() {
+    score += 5;
+    document.getElementById('score').textContent = score;
+    if (score > highscore) {
+        highscore = score;
+        localStorage.setItem('highscore', highscore);
+        document.getElementById('highscore').textContent = highscore;
     }
-});
+}
 
-//jump
-window.addEventListener("keydown" , (e) => {
-//    console.log(e);
+function resetGame() {
+    document.getElementById('gameOver').style.display = 'block';
 
-    if(e.key == "ArrowUp")
-        if(dog.classList != "dogActive") {
-            dog.classList.add("dogActive");
-
-//            remove class after 0.5 seconds
-            setTimeout(() => {
-                dog.classList.remove("dogActive");
-            },500);
+    setTimeout(() => {
+        document.getElementById('gameOver').style.display = 'none';
+        if (score > highscore) {
+            highscore = score;
+            localStorage.setItem('highscore', highscore);
         }
-});
+        score = 0;
+        document.getElementById('score').textContent = score;
+        obstaclePosition = 510;
+    }, 5000);
+}
 
-//game over
-let resultado = setInterval(() => {
-    let botaoDog = parseInt(getComputedStyle(dog).getPropertyValue("botao"));
-    //    console.log("botaoDog" + "botaoDog");
+let obstaclePosition = 510;
 
-    let obstEsquerda = parseInt(getComputedStyle(obstaculo).getPropertyValue("esquerda"));
-    //    console.log("obstEsquerda" + "obstEsquerda");
+function moveObstacle() {
+    obstaclePosition -= 10;
+    obstacle.style.left = obstaclePosition + "px";
 
-    if (botaoDog <= 90 && obstEsquerda >= 20 && obstEsquerda <= 145) {
-        //   console.log("Game Over");
-
-        gameOver.style.display = "obstaculo";
-        obstaculo.classList.remove("obstaculoActive");
-        clearInterval(intervalo);
-        playerScore = 0;
+    if (obstaclePosition < 0) {
+        obstaclePosition = 510;
+        updateScore();
     }
-}, 10);
+
+    if (obstaclePosition > 50 && obstaclePosition < 100 && !jumping) {
+        resetGame();
+    } else {
+        setTimeout(moveObstacle, 50);
+    }
+}
+
+moveObstacle();
