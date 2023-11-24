@@ -34,16 +34,26 @@ nav p {
 	font-size: 18px;
 	margin-right: 10px;
 }
-nav p:hover {
+nav p:hover, nav a:hover {
 	color: #fff;
 	background-color: #333;
 }
+nav a {
+	display: inline-block;
+	padding: 10px;
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18px;
+	margin-right: 10px;
+}
 main {
     margin-left: 65%;
-    margin-top: 10%;
+    margin-top: 15%;
 }
 a {
-    text-decoration: none;
+    color: black;
+	text-decoration: none;
 }
 .botoes {
     background-color: black;
