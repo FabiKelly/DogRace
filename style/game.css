@@ -1,84 +1,75 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+html, body {
+    min-height: 100%;
 }
+
 body {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: rgb(20, 20, 20);
+    background-color: #121212; 
+    flex-direction: column;
+    gap: 4%;
 }
-.container {
-    height: 85%;
-    width: 90%;
-    border: 1px solid gray;
-    margin: 0 auto;
+
+.game {
     position: relative;
+    width: 70%;
+    height: 60%;
+    border: 2px solid black;
     overflow: hidden;
-    background: url(../imgs/fundomexe.gif);
-    background-size: 85%;
+    background-color: #87CEEB; 
 }
-.container #dog {
-    height: 70px;
-    width: 70px;
+
+.ground {
     position: absolute;
-    bottom: 50px;
-    left: 20px;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background-color: #228B22; 
 }
-.dogActive {
-    animation: animateDog 0.5s linear infinite;
-}
-.container #dog img {
-    height: 100px;
-    width: 100px;
-}
-@keyframes animateDog {
-    0%, 100% {
-        bottom: 100px;
-    }
-    45%, 55% {
-        bottom: 232px;
-    }
-}
-.container #obstaculo {
-    height: 60px;
-    width: 80px;
+
+.dog {
     position: absolute;
     bottom: 20px;
-    right: -80px;
-}
-.container #obstaculo img {
-    height: 60px;
-    width: 80px;
-}
-.obstaculoActive {
-    animation: animateObst 1.5s linear infinite;
-}
-@keyframes animateObst {
-    0% {
-        right: -80px;
-    }
-    100% {
-        right: 100%;
-    }
-}
-#score {
+    left: 50px;
+    width: 90px;
     height: auto;
-    width: auto;
-    position: absolute;
-    top: 20px;
-    right: 0;
 }
-#gameOver {
-    /* display: none; */
-    font-size: 70px;
+
+.dog img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.obstacle {
     position: absolute;
-    left: calc(50% - 181px);
-    top: calc(50% - 40px);
-    height: 80px;
-    width: 362px;
-    color: #525252;
-    display: none;
+    bottom: 20px;
+    left: 90%; /* começa fora da tela */
+    width: 30px;
+    height: auto;
+    overflow: hidden; /* esconda qualquer parte da imagem que exceda as dimensões */
+}
+
+.obstacle img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.scoreboard {
+    color: white;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;  /* inicialmente oculto */
 }
