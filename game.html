@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt">
-    <head>
-        <meta charset="utf-8">
-        <title>Dog Race</title>
-        <link rel="icon" href="imgs/icone.png">
-        <link rel="stylesheet" href="style/game.css">
-    </head>
-    <body>
-        <div class="container">
-            <div id="dog">
-                <img src="imgs/cachorrinho.gif" alt="dog">
-            </div>
-            <div id="obstaculo">
-                <img src="imgs/pipe.png" alt="obstaculo">
-            </div>
-            <div id="score">Score <b>00</b></div>
-            <div id="gameOver">Game Over</div>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Cachorro</title>
+    <link rel="stylesheet" href="style/game.css">
+</head>
+<body>
+    <div class="game">
+        <div class="ground"></div>
+        
+        <div class="dog" id="dog">
+            <img src="imgs/cachorrinho.gif" alt="Cachorro correndo">
         </div>
+        
+        <div class="obstacle" id="obstacle">
+            <img src="imgs/obstaculo.png" alt="Obstáculo">
+        </div>
+        
+        <div class="game-over" id="gameOver">
+            Game Over
+        </div>
+    </div>
+    
+    <div class="scoreboard">
+        <span>Score: <span id="score">0</span></span>
+        <span>High Score: <span id="highscore">0</span></span>
+    </div>
 
-        <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
-        <script src="js/game.js"></script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
