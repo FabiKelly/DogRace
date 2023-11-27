@@ -10,6 +10,7 @@ body {
     background-color: #121212; 
     flex-direction: column;
     gap: 4%;
+    overflow: hidden;
 }
 
 .game {
