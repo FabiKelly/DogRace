@@ -77,3 +77,11 @@ main {
     height: 100vh;
     margin: 20px;
 }
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
