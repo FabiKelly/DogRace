@@ -1,0 +1,24 @@
+.container {
+    max-width: 800px; 
+    margin: 30px auto; 
+    padding: 15px;
+    background-color: #ecf0f1af; 
+    border: solid 1px ;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+
+}
+
+#jojoimage{
+    border-radius: 75%;
+    display: flex;
+    align-items: right; 
+    float: right;
+    margin-right: 10px;
+    height: 200px;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
