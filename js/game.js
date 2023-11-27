@@ -83,3 +83,72 @@ function moveObstacle() {
 }
 
 moveObstacle();
+
+//nuvens
+const cloud = document.getElementById('nuvem');
+
+let cloudPosition = window.innerWidth; // Inicia fora da tela à direita
+
+function moveCloud() {
+    cloudPosition -= 15;
+    cloud.style.left = cloudPosition + "px";
+
+    if (cloudPosition < -100) { // Ajuste conforme necessário para o tamanho da nuvem
+        cloudPosition = window.innerWidth; // Reposiciona a nuvem à direita
+    }
+
+    setTimeout(moveCloud, 50);
+}
+
+moveCloud();
+
+const cloud2 = document.getElementById('nuvem2');
+
+let cloud2Position = window.innerWidth; // Inicia fora da tela à direita
+
+function moveCloud2() {
+    cloud2Position -= 10;
+    cloud2.style.left = cloud2Position + "px";
+
+    if (cloud2Position < -100) { // Ajuste conforme necessário para o tamanho da nuvem
+        cloud2Position = window.innerWidth; // Reposiciona a nuvem à direita
+    }
+
+    setTimeout(moveCloud2, 50);
+}
+
+moveCloud2();
+
+const cloud3 = document.getElementById('nuvem2');
+
+let cloud3Position = window.innerWidth; // Inicia fora da tela à direita
+
+function moveCloud3() {
+    cloud3Position -= 15;
+    cloud3.style.left = cloud3Position + "px";
+
+    if (cloud3Position < -100) { // Ajuste conforme necessário para o tamanho da nuvem
+        cloud3Position = window.innerWidth; // Reposiciona a nuvem à direita
+    }
+
+    setTimeout(moveCloud3, 50);
+}
+
+moveCloud3();
+
+const cloud4 = document.getElementById('nuvem');
+
+let cloud4Position = window.innerWidth; // Inicia fora da tela à direita
+
+function moveCloud4() {
+    cloud4Position -= 10;
+    cloud4.style.left = cloud4Position + "px";
+
+    if (cloud4Position < -100) { // Ajuste conforme necessário para o tamanho da nuvem
+        cloud4Position = window.innerWidth; // Reposiciona a nuvem à direita
+    }
+
+    setTimeout(moveCloud4, 50);
+}
+
+moveCloud4();
