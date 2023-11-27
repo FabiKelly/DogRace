@@ -53,6 +53,13 @@ function resetGame() {
         }
         score = 0;
         document.getElementById('score').textContent = score;
+
+        // Obtenha o avatar selecionado
+        const avatarSelecionado = document.querySelector('input[name="avatar"]:checked').value;
+        
+        // Atualize a imagem do cachorro com o avatar selecionado
+        document.getElementById('dog').querySelector('img').src = avatarSelecionado;
+
         obstaclePosition = 510;
     }, 5000);
 }
