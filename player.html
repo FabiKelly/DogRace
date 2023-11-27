@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dog Race</title>
-    </head>
-    <body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Race</title>
+    <link rel="icon" href="imgs/icone.png">
+    <link rel="stylesheet" href="style/game.css">
+</head>
+<body>
+
+    <!-- Inclua o conteúdo do arquivo de seleção de avatar -->
+    <div id="avatarSection"></div>
+
+    <div class="game">
+        <div class="ground"></div>
+        
+        <div class="dog" id="dog">
+            <img src="imgs/cachorrinho.gif" alt="Cachorro correndo">
+        </div>
+        
+        <div class="obstacle" id="obstacle">
+            <img src="imgs/obstaculo.png" alt="Obstáculo">
+        </div>
+        
+        <div class="game-over" id="gameOver">
+            Game Over
+        </div>
+    </div>
     
-    </body>
+    <div class="scoreboard">
+        <span>Score: <span id="score">0</span></span>
+        <span>High Score: <span id="highscore">0</span></span>
+    </div>
+
+    <script src="js/game.js"></script>
+    <!-- Inclua o script para carregar o conteúdo do arquivo avatar-selection.html -->
+    <script>
+        // Carrega o conteúdo do arquivo avatar.hmtl na div #avatarSection
+        const avatarSection = document.getElementById('avatarSection');
+        fetch('avatar.html')
+            .then(response => response.text())
+            .then(data => avatarSection.innerHTML = data);
+    </script>
+</body>
 </html>
