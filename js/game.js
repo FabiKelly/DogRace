@@ -25,7 +25,7 @@ function jump() {
             jumping = false;
         }
         dog.style.bottom = (20 + jumpHeight) + "px";
-    }, 20);
+    }, 30);
 }
 
 let score = 0;
