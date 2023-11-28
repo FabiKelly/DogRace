@@ -56,19 +56,24 @@ body {
     display: block;
 }
 
-.obstacle {
+.obstaculo {
     position: absolute;
     bottom: 20px;
     left: 90%; /* começa fora da tela */
     width: 30px;
     height: auto;
-    overflow: hidden; /* esconda qualquer parte da imagem que exceda as dimensões */
+    overflow: hidden;
 }
 
-.obstacle img {
+.obstaculo img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+#obstaculo2 {
+    width: 50px;
+    margin-bottom: -1%;
 }
 
 .scoreboard {
