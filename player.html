@@ -9,18 +9,36 @@
 </head>
 <body>
 
-    <!-- Inclua o conteúdo do arquivo de seleção de avatar -->
     <div id="avatarSection"></div>
 
     <div class="game">
         <div class="ground"></div>
         
+        <div class="nuvem" id="nuvem">
+            <img src="imgs/nuvem.png" alt="Nuvem">
+        </div>
+
+        <div class="nuvem" id="nuvem2">
+            <img src="imgs/nuvem2.png" alt="Nuvem 2">
+        </div>
+
+        <div class="nuvem" id="nuvem3">
+            <img src="imgs/nuvem.png" alt="Nuvem 3">
+        </div>
+
+        <div class="nuvem" id="nuvem4">
+            <img src="imgs/nuvem2.png" alt="Nuvem 4">
+        </div>
+
         <div class="dog" id="dog">
             <img src="imgs/cachorrinho.gif" alt="Cachorro correndo">
         </div>
         
-        <div class="obstacle" id="obstacle">
+        <div class="obstaculo" id="obstaculo">
             <img src="imgs/obstaculo.png" alt="Obstáculo">
+        </div>
+        <div class="obstaculo" id="obstaculo2">
+            <img src="imgs/obstaculo2.png" alt="Obstáculo">
         </div>
         
         <div class="game-over" id="gameOver">
@@ -34,7 +52,8 @@
     </div>
 
     <script src="js/game.js"></script>
-    <!-- Inclua o script para carregar o conteúdo do arquivo avatar-selection.html -->
+    <script src="js/avatar.js"></script>
+    
     <script>
         // Carrega o conteúdo do arquivo avatar.hmtl na div #avatarSection
         const avatarSection = document.getElementById('avatarSection');
