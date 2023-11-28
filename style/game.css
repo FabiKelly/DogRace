@@ -41,6 +41,9 @@ body {
     height: auto;
 }
 
+#nuvem2 img, #nuvem4 img{
+    width: 80px;
+}
 
 .dog {
     position: absolute;
@@ -54,6 +57,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
+    margin-bottom: -20%;
 }
 
 .obstaculo {
