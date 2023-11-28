@@ -1,5 +1,5 @@
 const dog = document.getElementById('dog');
-const obstacle = document.getElementById('obstacle');
+const obstacle = document.getElementById('obstaculo');
 let jumping = false;
 
 document.addEventListener('keydown', (event) => {
@@ -60,18 +60,20 @@ function resetGame() {
         // Atualize a imagem do cachorro com o avatar selecionado
         document.getElementById('dog').querySelector('img').src = avatarSelecionado;
 
-        obstaclePosition = 510;
+        obstaclePosition = window.innerWidth;
     }, 5000);
 }
 
-let obstaclePosition = 510;
+// obstáculos
+
+let obstaclePosition = window.innerWidth;
 
 function moveObstacle() {
-    obstaclePosition -= 10;
+    obstaclePosition -= 11;
     obstacle.style.left = obstaclePosition + "px";
 
     if (obstaclePosition < 0) {
-        obstaclePosition = 510;
+        obstaclePosition = window.innerWidth;
         updateScore();
     }
 
@@ -84,16 +86,39 @@ function moveObstacle() {
 
 moveObstacle();
 
+const obstacle2 = document.getElementById('obstaculo2');
+
+let obstacle2Position = window.innerWidth; // Inicia fora da tela à direita
+
+function moveObstacle2() {
+    obstacle2Position -= 8;
+    obstacle2.style.left = obstacle2Position + "px";
+
+    if (obstacle2Position < 0) {
+        obstacle2Position = window.innerWidth; // Reposiciona o obstáculo à direita
+        updateScore();
+    }
+
+    if (obstacle2Position > 50 && obstacle2Position < 100 && !jumping || obstaclePosition > 50 && obstaclePosition < 100 && !jumping) {
+        resetGame();
+    } else {
+        setTimeout(moveObstacle2, 50);
+    }
+}
+
+moveObstacle2();
+
 //nuvens
+
 const cloud = document.getElementById('nuvem');
 
 let cloudPosition = window.innerWidth; // Inicia fora da tela à direita
 
 function moveCloud() {
-    cloudPosition -= 15;
+    cloudPosition -= 7;
     cloud.style.left = cloudPosition + "px";
 
-    if (cloudPosition < -100) { // Ajuste conforme necessário para o tamanho da nuvem
+    if (cloudPosition < -100) {
         cloudPosition = window.innerWidth; // Reposiciona a nuvem à direita
     }
 
@@ -119,12 +144,12 @@ function moveCloud2() {
 
 moveCloud2();
 
-const cloud3 = document.getElementById('nuvem2');
+const cloud3 = document.getElementById('nuvem3');
 
 let cloud3Position = window.innerWidth; // Inicia fora da tela à direita
 
 function moveCloud3() {
-    cloud3Position -= 15;
+    cloud3Position -= 9;
     cloud3.style.left = cloud3Position + "px";
 
     if (cloud3Position < -100) { // Ajuste conforme necessário para o tamanho da nuvem
@@ -136,12 +161,12 @@ function moveCloud3() {
 
 moveCloud3();
 
-const cloud4 = document.getElementById('nuvem');
+const cloud4 = document.getElementById('nuvem4');
 
 let cloud4Position = window.innerWidth; // Inicia fora da tela à direita
 
 function moveCloud4() {
-    cloud4Position -= 10;
+    cloud4Position -= 13;
     cloud4.style.left = cloud4Position + "px";
 
     if (cloud4Position < -100) { // Ajuste conforme necessário para o tamanho da nuvem
