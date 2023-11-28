@@ -1,5 +1,7 @@
 const dog = document.getElementById('dog');
 const obstacle = document.getElementById('obstaculo');
+const restartButton = document.getElementById('restartButton'); // Adicionado o botão de reiniciar
+
 let jumping = false;
 
 document.addEventListener('keydown', (event) => {
@@ -45,6 +47,10 @@ function updateScore() {
 function resetGame() {
     document.getElementById('gameOver').style.display = 'block';
 
+    document.getElementById('gameOver').innerHTML = 'Game Over <br> <button id="restartButton" onclick="restartGame()">Reiniciar</button>';
+
+    document.getElementById('restartButton').style.display = 'block';
+
     setTimeout(() => {
         document.getElementById('gameOver').style.display = 'none';
         if (score > highscore) {
@@ -53,15 +59,23 @@ function resetGame() {
         }
         score = 0;
         document.getElementById('score').textContent = score;
-
-        // Obtenha o avatar selecionado
-        const avatarSelecionado = document.querySelector('input[name="avatar"]:checked').value;
         
-        // Atualize a imagem do cachorro com o avatar selecionado
-        document.getElementById('dog').querySelector('img').src = avatarSelecionado;
-
         obstaclePosition = window.innerWidth;
-    }, 5000);
+    }, 500000);
+}
+
+function restartGame() {
+
+    document.getElementById('gameOver').style.display = 'none';
+
+    score = 0;
+    document.getElementById('score').textContent = score;
+
+    obstaclePosition = window.innerWidth;
+    obstacle2Position = window.innerWidth;
+
+    moveObstacle2();
+    moveObstacle();
 }
 
 // obstáculos
